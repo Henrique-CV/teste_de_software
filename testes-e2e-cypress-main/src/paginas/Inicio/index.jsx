@@ -48,7 +48,7 @@ export default function Inicio() {
                   pagar mensalidade!
                 </p>
               </div>
-              <div className={estilos.vantagens__item} data-test="seguro">
+              <div className={estilos.vantagens__item} data-test="texto">
                 <img data-test="img"
                   src={dispositivo}
                   alt="ícone de um dispositivo como notebook"

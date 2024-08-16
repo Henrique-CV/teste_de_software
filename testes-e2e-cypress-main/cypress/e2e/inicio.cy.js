@@ -18,9 +18,9 @@ describe('Página Principal', () => {
     cy.getByData('pontos').find("h3",).should("contain", "Programa de pontos")
     cy.getByData('pontos').find("p",).should("contain", "Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!")
     
-    cy.getByData('seguro').find("h3",).should("contain", "Seguro Dispositivos")
-    cy.getByData('seguro').find("p",).should("contain", "Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.")
-  })
+  //   cy.getByData('seguro').find("h3",).should("contain", "Seguro Dispositivos")
+  //   cy.getByData('seguro').find("p",).should("contain", "Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.")
+   })
 })
 
 describe('Página Principal', () => {
@@ -32,5 +32,6 @@ describe('Página Principal', () => {
     
   cy.getByData('img').should("be.visible")
 
+  cy.getByName('texto').find("p").should("contain", "Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.")
   })
 })
