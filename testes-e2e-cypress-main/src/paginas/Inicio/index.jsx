@@ -16,40 +16,40 @@ export default function Inicio() {
               Experimente mais liberdade no controle da sua vida financeira.
               Crie sua conta com a gente!
             </h1>
-            <img
+            <img data-test="img"
               src={ilustracaoBanner}
               alt="Gráficos e uma pessoa com dinheiro na mão"
             />
           </div>
-          <div className={estilos.vantagens}>
-            <h2 data-test="titulo-principal">Vantagens do nosso banco:</h2>
-            <div className={estilos.vantagens__itens}>
-              <div className={estilos.vantagens__item}>
-                <img src={presente} alt="ícone de um presente" />
+          <div className={estilos.vantagens} data-test="vantagens">
+            <h2>Vantagens do nosso banco:</h2>
+            <div className={estilos.vantagens__itens} data-test="presente">
+              <div className={estilos.vantagens__item} >
+                <img data-test="img" src={presente} alt="ícone de um presente" />
                 <h3>Conta e cartão gratuitos</h3>
                 <p>
                   Isso mesmo, nossa conta é digital, sem custo fixo e mais que
                   isso: sem tarifa de manutenção.
                 </p>
               </div>
-              <div className={estilos.vantagens__item} data-test="imagem-saque">
-                <img src={saque} alt="ícone de uma mão segurando um dinheiro"/>
+              <div className={estilos.vantagens__item} data-test="saque">
+                <img data-teste="img" src={saque} alt="ícone de uma mão segurando um dinheiro"/>
                 <h3>Saques sem custo</h3>
                 <p>
                   Você pode sacar gratuitamente 4x por mês de qualquer Banco
                   24h.
                 </p>
               </div>
-              <div className={estilos.vantagens__item}>
-                <img src={estrela} alt="ícone de uma estrela" />
+              <div className={estilos.vantagens__item} data-test="pontos">
+                <img src={estrela} alt="ícone de uma estrela" data-test="img"/>
                 <h3>Programa de pontos</h3>
                 <p>
                   Você pode acumular pontos com suas compras no crédito sem
                   pagar mensalidade!
                 </p>
               </div>
-              <div className={estilos.vantagens__item}>
-                <img
+              <div className={estilos.vantagens__item} data-test="seguro">
+                <img data-test="img"
                   src={dispositivo}
                   alt="ícone de um dispositivo como notebook"
                 />

@@ -27,3 +27,7 @@
 Cypress.Commands.add('getByData', (seletor) => {
     return cy.get(`[data-test=${seletor}]`)
 })
+
+Cypress.Commands.add('getImg', (seletor) => {
+    return cy.get(`[imagem=${seletor}]`)
+})
