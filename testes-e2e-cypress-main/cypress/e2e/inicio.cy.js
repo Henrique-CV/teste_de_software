@@ -1,37 +1,64 @@
 describe('Página Principal', () => {
-  beforeEach( () => {
+  beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })
   it('Deve renderizar h1 com o texto correto!', () => {
     cy.visit('http://localhost:3000')
-    
     cy.getByData('titulo-principal').contains('Experimente mais liberdade no controle da sua vida financeira. Crie sua conta com a gente!')
-    
-    cy.getByData('vantagens').contains('Vantagens do nosso banco:')
-    
-    cy.getByData('presente').find("h3").should("contain", "Conta e cartão gratuitos")
-    cy.getByData('presente').find("p").should("contain", "Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção.")
-    
-    cy.getByData('saque').find("h3",).should("contain", "Saques sem custo")
-    cy.getByData('saque').find("p",).should("contain", "Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h.")
-    
-    cy.getByData('pontos').find("h3",).should("contain", "Programa de pontos")
-    cy.getByData('pontos').find("p",).should("contain", "Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!")
-    
-  //   cy.getByData('seguro').find("h3",).should("contain", "Seguro Dispositivos")
-  //   cy.getByData('seguro').find("p",).should("contain", "Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.")
-   })
+  })
+  it('Deve renderizar o h2 corretamente!', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('titulo-h2').contains('Vantagens do nosso banco:')
+  })
 })
 
-describe('Página Principal', () => {
-  beforeEach( () => {
+describe('vantagens', () => {
+  beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })
-  it('Deve renderizar imagem correto!', () => {
+  it('Deve renderizar o h3 de cartão corretamente', () => {
     cy.visit('http://localhost:3000')
-    
-  cy.getByData('img').should("be.visible")
-
-  cy.getByName('texto').find("p").should("contain", "Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.")
+    cy.getByData('titulo-cartao').contains('Conta e cartão gratuitos')
+  })
+  it('Deve renderizar o p de cartão corretamente', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('cartao').contains('Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção.')
+  })
+  it('Deve renderizar o h3 de saques', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('titulo-saques').contains('Saques sem custo')
+  })
+  it('Deve renderizar o p de saques corretamente', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('saques').contains('Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h.')
+  })
+  it('Deve renderizar o h3 de pontos', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('titulo-pontos').contains('Programa de pontos')
+  })
+  it('Deve renderizar o p de pontos corretamente', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('pontos').contains('Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!')
+  })
+  it('Deve renderizar o h3 de seguro', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('titulo-seguro').contains('Seguro Dispositivos')
+  })
+  it('Deve renderizar o p de seguro corretamente', () => {
+    cy.visit('http://localhost:3000')
+    cy.getByData('seguro').contains('Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.')
   })
 })
+
+describe('imagens', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+  })
+  it('Deve renderizar as imagens corretamente', () => {
+  cy.getByData('imagem').should("be.visible")
+  })
+  it('indentificar texto conta', () => {
+    cy.indentificatexto('div2').find("h3").should("contain", "Conta e cartão gratuitos")
+  })
+})
+

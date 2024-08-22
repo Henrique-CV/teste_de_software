@@ -19,12 +19,15 @@ async function validaDadosFormulario(user) {
   });
 
   try {
-    if (user.nome === '') await schemaCadastro.validate(user);
-    if (!user.nome) await schemaLogin.validate(user);
+    if (user.nome){ 
+      await schemaCadastro.validate(user);
+    } else { 
+        await schemaLogin.validate(user);
+    }
 
     return { valid: true, path: '', message: 'Validação foi um sucesso!' };
   } catch (erro) {
-    return { valid: false, path: erro.path, message: erro.errors };
+    return { valid: false, path: erro.path || '', message: erro.errors.join(', ') };
   }
 }
 export { validaDadosFormulario };
