@@ -49,9 +49,9 @@ img {
   width: 40px;
 }
 
-.hamburguerIcon {
+/* .hamburguerIcon {
   display: none;
-}
+} */
 
 @media (max-width: 425px) {
   .container {
